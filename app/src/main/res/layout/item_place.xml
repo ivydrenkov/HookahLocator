@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/place_list_card_height">
+
+    <ImageView
+        android:id="@+id/it_place_bg_image"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/bg_zav"/>
+
+
+    <RelativeLayout
+        android:padding="@dimen/base_padding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/it_place_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Place Name"
+            style="@style/BaseText"/>
+
+        <TextView
+            android:id="@+id/it_place_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text=" - "
+            style="@style/SmallText"/>
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/it_place_rate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="0.0"
+                android:textColor="@color/yellow"
+                style="@style/HugeText"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="@dimen/place_list_address_icon_size"
+                        android:layout_height="@dimen/place_list_address_icon_size"
+                        android:paddingRight="6dp"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/icon_metro"/>
+                    <TextView
+                        android:id="@+id/it_place_metro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Metro"
+                        style="@style/SmallText"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="@dimen/place_list_address_icon_size"
+                        android:layout_height="@dimen/place_list_address_icon_size"
+                        android:paddingRight="6dp"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/icon_pin"/>
+                    <TextView
+                        android:id="@+id/it_place_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Address"
+                        style="@style/SmallText"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

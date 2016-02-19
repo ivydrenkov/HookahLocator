@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">HookahLocator</string>
+
+    <string name="loading">Загрузка…</string>
+
+    <string name="no">Нет</string>
+
+    <string name="main_btn_select_city">Выберите свой город</string>
+
+    <string name="main_screen_title">Стартовый экран</string>
+    <string name="sel_place_title">Выбор заведения</string>
+    <string name="place_title">Экран заведения</string>
+    <string name="gallery_title">Фотографии</string>
+    <string name="comments_title">Комментарии</string>
+    <string name="hookah_title">Кальяны и табаки</string>
+    <string name="map_title">Карта</string>
+    <string name="sel_city_title">Выбор города</string>
+
+    <string name="search_hint">Поиск</string>
+
+    <string name="tab_rating">Рейтинг</string>
+    <string name="tab_distance">Расстояние</string>
+    <string name="tab_favorites">Избранное</string>
+
+    <string name="error_title">Ошибка</string>
+    <string name="error_loading">Ошибка при загрузке</string>
+    <string name="error_btn_retry">Повторить</string>
+
+
+    <string name="id_for_tab_selector_icon_selected">selected</string>
+    <string name="id_for_tab_selector_icon_normal">normal</string>
+</resources>

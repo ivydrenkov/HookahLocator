@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/v_search_lay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <ImageButton
+        android:id="@+id/v_search_button_left"
+        android:layout_alignParentLeft="true"
+        android:layout_width="@dimen/appbar_icon_size_include_padding"
+        android:layout_height="@dimen/appbar_icon_size_include_padding"
+        android:layout_centerVertical="true"
+        android:paddingRight="@dimen/base_padding"
+        android:paddingLeft="@dimen/base_padding"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/icon_home"/>
+    <ImageButton
+        android:id="@+id/v_search_button_right"
+        android:layout_alignParentRight="true"
+        android:layout_width="@dimen/appbar_icon_size_include_padding"
+        android:layout_height="@dimen/appbar_icon_size_include_padding"
+        android:layout_centerVertical="true"
+        android:paddingRight="@dimen/base_padding"
+        android:paddingLeft="@dimen/base_padding"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/icon_map"/>
+    <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
+    <LinearLayout
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:layout_width="0px" android:layout_height="0px"/>
+    <EditText
+        android:id="@+id/v_search_et"
+        android:layout_toLeftOf="@id/v_search_button_right"
+        android:layout_toRightOf="@id/v_search_button_left"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_search_frame"
+        android:textColor="@color/yellow"
+        android:textColorHint="@color/hintText"
+        android:textCursorDrawable="@null"
+        android:hint="@string/search_hint"
+        style="@style/BaseText"/>
+    <ImageButton
+        android:id="@+id/v_search_button_search_clear"
+        android:layout_alignRight="@id/v_search_et"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingTop="@dimen/base_padding"
+        android:paddingBottom="@dimen/base_padding"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_notification_clear_all"/>
+</RelativeLayout>

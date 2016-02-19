@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/mainBackground"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/map_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/view_search_bar" />
+    </FrameLayout>
+
+    <fragment
+        android:id="@+id/map_map"
+        android:layout_below="@id/map_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.MapFragment"
+        />
+
+    <!--com.mapbox.mapboxsdk.views.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:access_token="sk.eyJ1IjoieTUwMjMiLCJhIjoiY2loNTE5YXpyMDB4OHZlbTc5OWFkNXdtZCJ9.b5bwaWPKPbD47aABC_Z8fA"
+        /-->
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="place_no_photos">Нет фотографий</string>
+
+    <string name="place_opened_today">Открыто сегодня:</string>
+    <string name="place_btn_call">Позвонить</string>
+    <string name="place_btn_favorite">В избранное</string>
+    <string name="place_btn_unfavorite">Удалить</string>
+    <string name="place_btn_hookahs">Кальяны и табаки</string>
+    <string name="place_btn_comments">Показать ещё отзывы</string>
+
+    <string name="place_comments_title">Отзывы</string>
+
+    <!-- &#160; — just white space -->
+    <string name="place_rate_hookah">&#160;— Кальяны</string>
+    <string name="place_rate_atmosphere">&#160;— Атмосфера</string>
+    <string name="place_rate_service">&#160;— Сервис</string>
+
+    <string name="place_price_hookah">Кальян —&#160;</string>
+    <string name="place_price_tea">Чай —&#160;</string>
+
+    <string name="place_food">Еда —&#160;</string>
+    <string name="place_alcohol">Алкоголь —&#160;</string>
+
+    <string name="place_popup_yandex_nav">Яндекс.Навигатор</string>
+    <string name="place_popup_yandex_map">Яндекс.Карты</string>
+    <string name="place_popup_not_installed">(не установлен)</string>
+
+</resources>

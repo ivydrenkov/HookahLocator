@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/v_map_info_logo"
+        android:layout_width="@dimen/map_info_logo_size"
+        android:layout_height="@dimen/map_info_logo_size"
+        android:layout_marginRight="5dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/v_map_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            style="@style/BaseText"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/place_list_address_icon_size"
+                android:layout_height="@dimen/place_list_address_icon_size"
+                android:paddingRight="6dp"
+                android:scaleType="centerInside"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_metro"/>
+            <TextView
+                android:id="@+id/v_map_info_metro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                style="@style/SmallText"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/place_list_address_icon_size"
+                android:layout_height="@dimen/place_list_address_icon_size"
+                android:paddingRight="6dp"
+                android:scaleType="centerInside"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_pin"/>
+            <TextView
+                android:id="@+id/v_map_info_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                style="@style/SmallText"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
