@@ -34,6 +34,7 @@ public class AppModule {
     @Singleton
     Tracker provideGoogleAnalytics() {
         GoogleAnalytics analytics = GoogleAnalytics.getInstance(mApplication);
+        analytics.setLocalDispatchPeriod(30);
         // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
         Tracker mTracker = analytics.newTracker(R.xml.global_tracker);
         return mTracker;

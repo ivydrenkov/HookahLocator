@@ -86,7 +86,6 @@ public class PlaceActivity extends BaseLoadingActivity implements View.OnClickLi
         btnTrack = (ImageButton) findViewById(R.id.place_button_track);
         btnTrack.setOnClickListener(this);
         btnGallery = (ImageButton) findViewById(R.id.place_button_gallery);
-        btnGallery.setOnClickListener(this);
         btnCall = (Button) findViewById(R.id.place_button_call);
         btnCall.setOnClickListener(this);
         btnFavorite = (Button) findViewById(R.id.place_button_favorite);
@@ -219,6 +218,12 @@ public class PlaceActivity extends BaseLoadingActivity implements View.OnClickLi
         ImageView ivMain = (ImageView) findViewById(R.id.place_image);
         ivMain.setOnClickListener(this);
         imageLoader.displayImage(API.URL + placeData.info.mainImage, ivMain);
+
+        if ((placeData.info.photos != null) && (placeData.info.photos.size() > 0)) {
+            btnGallery.setOnClickListener(this);
+        } else {
+            btnGallery.setVisibility(View.GONE); //Hide button if no photos
+        }
     }
 
     private void updateDistance() {
