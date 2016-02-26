@@ -199,8 +199,8 @@ public class DataProvider implements Callback {
     public void onResponse(Response response) throws IOException {
         Class tClass = CLASSES_MAP.get(currentRequest);
         String table = TABLES_MAP.get(currentRequest);
-        String jsonData = response.body().string();
         try {
+            String jsonData = response.body().string();
             if (currentRequest.equals(API.REQUEST_PLACE_FULL)) { //requested single item
                 JSONObject jsonObject = new JSONObject(jsonData);
                 BaseObject object = (BaseObject) parser.parseObject(jsonObject, tClass);
@@ -218,6 +218,9 @@ public class DataProvider implements Callback {
             }
         } catch (JSONException e) {
             e.printStackTrace();
+            listenerForLoadingData.onDataFailure();
+        } catch (IOException ex) {
+            ex.printStackTrace();
             listenerForLoadingData.onDataFailure();
         }
     }
