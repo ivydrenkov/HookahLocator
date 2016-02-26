@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -43,7 +44,7 @@ public class DataProvider implements Callback {
 
     String currentRequest;
     IDataListener listenerForLoadingData;
-
+    Call currentOkHttpCall;
 
     private static final Map<String, String> TABLES_MAP;
     static {
@@ -158,7 +159,7 @@ public class DataProvider implements Callback {
                     .get()
                     .url(request)
                     .build();
-            httpClient.newCall(req).enqueue(this);
+            makeOkHttpRequest(req);
             listenerForLoadingData = listener;
             currentRequest = cleanRequest;
         }
@@ -183,20 +184,30 @@ public class DataProvider implements Callback {
                     .get()
                     .url(request)
                     .build();
-            httpClient.newCall(req).enqueue(this);
+            makeOkHttpRequest(req);
             listenerForLoadingData = listener;
             currentRequest = cleanRequest;
         }
     }
 
+    private void makeOkHttpRequest(Request req) {
+        if (currentOkHttpCall != null) {
+            currentOkHttpCall.cancel();
+        }
+        currentOkHttpCall = httpClient.newCall(req);
+        currentOkHttpCall.enqueue(this);
+    }
+
     @Override
     public void onFailure(Request request, IOException e) {
+        currentOkHttpCall = null;
         e.printStackTrace();
         listenerForLoadingData.onDataFailure();
     }
 
     @Override
     public void onResponse(Response response) throws IOException {
+        currentOkHttpCall = null;
         Class tClass = CLASSES_MAP.get(currentRequest);
         String table = TABLES_MAP.get(currentRequest);
         try {
@@ -220,8 +231,10 @@ public class DataProvider implements Callback {
             e.printStackTrace();
             listenerForLoadingData.onDataFailure();
         } catch (IOException ex) {
-            ex.printStackTrace();
-            listenerForLoadingData.onDataFailure();
+            if (!ex.getMessage().contains("Canceled")) {
+                ex.printStackTrace();
+                listenerForLoadingData.onDataFailure();
+            }
         }
     }
 }

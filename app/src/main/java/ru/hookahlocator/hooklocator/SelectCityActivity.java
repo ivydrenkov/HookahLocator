@@ -63,9 +63,7 @@ public class SelectCityActivity extends BaseLoadingActivity implements TextWatch
             ViewCompat.setNestedScrollingEnabled(listView, true);
         }
         String preSelectedCity = getIntent().getStringExtra(BUNDLE_CITY_ABBR);
-        if (preSelectedCity == null) {
-            loadData();
-        } else {
+        if (preSelectedCity != null) {
             gotoPlaces(preSelectedCity);
         }
     }

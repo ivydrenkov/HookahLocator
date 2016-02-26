@@ -149,6 +149,10 @@ public class SelectPlaceActivity extends BaseLoadingActivity implements View.OnC
     @Override
     public void onDataReady(ArrayList<? extends BaseObject> data) {
         super.onDataReady(data);
+        if (!data.isEmpty() && (!Place.class.isInstance(data.get(0)))) { //Not my data!
+            Log.e(TAG, "Not my data, got " + data.get(0).getClass().getSimpleName());
+            return;
+        }
         placesSource = (ArrayList<Place>) data;
         Log.v(TAG, "Loaded " + placesSource.size() + " places");
         runOnUiThread(new Runnable() {
