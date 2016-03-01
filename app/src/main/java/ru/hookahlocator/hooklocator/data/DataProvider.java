@@ -201,8 +201,10 @@ public class DataProvider implements Callback {
     @Override
     public void onFailure(Request request, IOException e) {
         currentOkHttpCall = null;
-        e.printStackTrace();
-        listenerForLoadingData.onDataFailure();
+        if (!e.getMessage().contains("Canceled")) {
+            e.printStackTrace();
+            listenerForLoadingData.onDataFailure();
+        }
     }
 
     @Override
@@ -230,11 +232,6 @@ public class DataProvider implements Callback {
         } catch (JSONException e) {
             e.printStackTrace();
             listenerForLoadingData.onDataFailure();
-        } catch (IOException ex) {
-            if (!ex.getMessage().contains("Canceled")) {
-                ex.printStackTrace();
-                listenerForLoadingData.onDataFailure();
-            }
         }
     }
 }
