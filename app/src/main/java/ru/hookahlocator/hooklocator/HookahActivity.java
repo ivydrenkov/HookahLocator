@@ -31,10 +31,8 @@ public class HookahActivity extends BaseLoadingActivity {
             Log.e(TAG, "No data can be found!");
             finish();
         }
-        dataProvider.getPlaceFullInfoAsync(this, placeId);
         loadData();
     }
-
 
     @Override
     protected void onResume() {
