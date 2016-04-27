@@ -9,8 +9,8 @@ android {
         applicationId 'ru.hookahlocator.hooklocator'
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 15
-        versionName "1.0.6"
+        versionCode 16
+        versionName "1.0.6a"
         //espresso - test framework
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

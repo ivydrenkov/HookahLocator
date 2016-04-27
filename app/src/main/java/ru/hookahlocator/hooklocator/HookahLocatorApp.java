@@ -16,7 +16,7 @@ public class HookahLocatorApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        YandexMetrica.activate(getApplicationContext(), "11d5368b-39cc-46ee-98e2-1ef05b2c9a49");
+        YandexMetrica.activate(getApplicationContext(), "99cdb08c-6000-4b98-8a61-578384a8e117");
         // Отслеживание активности пользователей
         YandexMetrica.enableActivityAutoTracking(this);
 
